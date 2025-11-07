@@ -132,7 +132,7 @@ def process_file(name):
     volumes={
         str(Path.cwd()): {"bind": str(UPLOAD_FOLDER.resolve()), "mode": "rw"}
     },
-    working_dir="./temp",
+    working_dir=f"{Path.cwd() / 'temp'}",
     user=f"{os.getuid()}:{os.getgid()}",
     remove=True,      # auto-remove container after it exits
     detach=False,     # wait for it to finish (set True to run in background)
